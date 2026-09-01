@@ -5,25 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FluxMoat — on-device network privacy monitor &amp; firewall for iPhone</title>
 <meta name="description" content="FluxMoat observes and filters network activity locally on your iPhone. Your traffic never passes through servers operated by FluxMoat. No accounts, no analytics, no data collection.">
+<link rel="canonical" href="https://fluxmoat.hominexis.com/">
+<meta name="theme-color" content="#0a0f2a">
+
+<link rel="preload" href="assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%232E6BE0' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='5.5' fill='%2373D9FF'/%3E%3C/svg%3E">
+
+<link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/brand/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FluxMoat">
+<meta property="og:url" content="https://fluxmoat.hominexis.com/">
+<meta property="og:title" content="FluxMoat — on-device network privacy monitor &amp; firewall for iPhone">
+<meta property="og:description" content="FluxMoat observes and filters network activity locally on your iPhone. Your traffic never passes through servers operated by FluxMoat. No accounts, no analytics, no data collection.">
+<meta property="og:image" content="https://fluxmoat.hominexis.com/assets/brand/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FluxMoat">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FluxMoat — on-device network privacy monitor &amp; firewall for iPhone">
+<meta name="twitter:description" content="FluxMoat observes and filters network activity locally on your iPhone. Your traffic never passes through servers operated by FluxMoat. No accounts, no analytics, no data collection.">
+<meta name="twitter:image" content="https://fluxmoat.hominexis.com/assets/brand/og.png">
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 
+<!-- The brand mark, drawn by hand from the logo: the open ring, the water
+     running through the gap, and the light that comes off it. -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <linearGradient id="fmRing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A9D6FF"/>
+      <stop offset=".5" stop-color="#4B93F2"/>
+      <stop offset="1" stop-color="#2E6BE0"/>
+    </linearGradient>
+    <linearGradient id="fmWave" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#3F86EE"/>
+      <stop offset=".55" stop-color="#8FE9FF"/>
+      <stop offset="1" stop-color="#E4F8FF"/>
+    </linearGradient>
+    <symbol id="fm-mark" viewBox="0 0 32 32">
+      <path d="M23.8 8.2A11 11 0 1 0 23.8 23.8" fill="none" stroke="url(#fmRing)"
+            stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M5.4 21.8C11.4 15.4 18.4 23.2 29.2 10.6" fill="none" stroke="url(#fmWave)"
+            stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="28.6" cy="6.4" r="1.15" fill="#8FE9FF"/>
+      <circle cx="30.7" cy="10.2" r=".78" fill="#8FE9FF" opacity=".7"/>
+    </symbol>
+  </defs>
+</svg>
+
 <header class="site-head">
   <div class="wrap-wide">
     <a class="brand" href="index.html">
-      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
-        <defs>
-          <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#73ADFA"/><stop offset="1" stop-color="#2E6BE0"/>
-          </linearGradient>
-        </defs>
-        <circle cx="16" cy="16" r="13" fill="none" stroke="url(#hg)" stroke-width="2.5"/>
-        <circle cx="16" cy="16" r="5.5" fill="#73D9FF"/>
-      </svg>
+      <svg class="ring" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><use href="#fm-mark"/></svg>
       FluxMoat
     </a>
     <nav class="nav">
@@ -37,22 +75,55 @@
 <main id="main">
 
   <!-- ---------------- hero ---------------- -->
-  <div class="hero">
+  <div class="hero night">
+    <svg class="hero-flux" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice"
+         aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="fx1" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#73ADFA" stop-opacity="0"/>
+          <stop offset=".42" stop-color="#8FE9FF" stop-opacity=".5"/>
+          <stop offset="1" stop-color="#2E6BE0" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="fx2" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#2E6BE0" stop-opacity="0"/>
+          <stop offset=".55" stop-color="#73ADFA" stop-opacity=".38"/>
+          <stop offset="1" stop-color="#73ADFA" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g fill="none" stroke="#7FB4F5" stroke-opacity=".11">
+        <circle cx="720" cy="268" r="212" stroke-width="1.4"/>
+        <circle cx="720" cy="268" r="318" stroke-width="1"/>
+        <circle cx="720" cy="268" r="430" stroke-width="1" stroke-opacity=".06"/>
+      </g>
+      <g class="drift" fill="none">
+        <path d="M-140 392C220 306 430 476 728 404S1200 250 1580 336"
+              stroke="url(#fx1)" stroke-width="2.6"/>
+        <path d="M-140 452C260 386 470 528 768 456S1240 322 1580 406"
+              stroke="url(#fx1)" stroke-width="1.4"/>
+      </g>
+      <g class="drift-slow" fill="none">
+        <path d="M-140 196C220 132 484 258 782 186S1226 84 1580 156"
+              stroke="url(#fx2)" stroke-width="1.8"/>
+        <path d="M-140 540C300 486 524 616 824 544S1266 428 1580 512"
+              stroke="url(#fx2)" stroke-width="1.2"/>
+      </g>
+      <g fill="#9FE6FF">
+        <circle class="twinkle" cx="1046" cy="150" r="2.6"/>
+        <circle class="twinkle-b" cx="1122" cy="214" r="1.8"/>
+        <circle class="twinkle" cx="332" cy="196" r="1.8"/>
+        <circle class="twinkle-b" cx="268" cy="452" r="2.2"/>
+        <circle class="twinkle" cx="1158" cy="454" r="1.6"/>
+      </g>
+    </svg>
+
     <div class="wrap">
-      <svg class="mark" width="104" height="104" viewBox="0 0 104 104" role="img" aria-label="FluxMoat">
-        <title>FluxMoat</title>
-        <!-- the outer bank -->
-        <circle cx="52" cy="52" r="45" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity=".26"/>
-        <!-- the moat: a ring with four causeways -->
-        <circle cx="52" cy="52" r="33" fill="none" stroke="var(--accent)" stroke-width="4"
-                stroke-dasharray="44 7.83" stroke-dashoffset="22" stroke-linecap="round"/>
-        <!-- what the moat is around: this device -->
-        <circle cx="52" cy="52" r="14" fill="var(--accent)" opacity=".22"/>
-        <circle cx="52" cy="52" r="8" fill="var(--accent)"/>
-        <!-- traffic that got through, and traffic that did not -->
-        <circle cx="52" cy="10" r="3.4" fill="var(--received)"/>
-        <circle cx="88" cy="76" r="3.4" fill="var(--blocked)"/>
-      </svg>
+      <picture class="hero-logo">
+        <source type="image/webp"
+                srcset="assets/brand/logo-256.webp 256w, assets/brand/logo-512.webp 512w"
+                sizes="232px">
+        <img src="assets/brand/logo-512.png" width="512" height="512" alt="FluxMoat"
+             fetchpriority="high" decoding="async">
+      </picture>
 
       <h1>FluxMoat</h1>
       <p class="tagline">An on-device network privacy monitor and firewall for iPhone.</p>
@@ -72,11 +143,27 @@
 
       <ul class="cards">
         <li class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round">
+              <path d="M3.4 17.6a8.6 8.6 0 1 1 17.2 0"/>
+              <path d="M12 17.6 16.6 11.9"/>
+              <circle cx="12" cy="17.6" r="1.5" fill="currentColor" stroke="none"/>
+              <path d="M4.6 12.6 6 13.1M12 8.4v1.5M19.4 12.6 18 13.1" opacity=".55"/>
+            </svg>
+          </span>
           <h3>Dashboard</h3>
           <p>Protection on or off, the last hour of traffic as it happens, anything waiting on
           your decision, and the destinations your device has been talking to most.</p>
         </li>
         <li class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                 stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 10.5 7.2 6.4l4.1 4.6 4.2-5.4L21 9.6" stroke="var(--received)"/>
+              <path d="M3 18.6 7.2 15l4.1 3.4 4.2-4.2L21 17" stroke="var(--sent)"/>
+            </svg>
+          </span>
           <h3>Live Traffic</h3>
           <p>The connection-by-connection view: destination, port, protocol, bytes out and in,
           and the verdict each one got. Sent and received are read as one instrument.</p>
@@ -86,23 +173,57 @@
           </ul>
         </li>
         <li class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round">
+              <circle cx="12" cy="12" r="8.4"/>
+              <path d="M3.6 12h16.8" opacity=".6"/>
+              <path d="M12 3.6c2.5 2.4 3.8 5.3 3.8 8.4S14.5 18 12 20.4C9.5 18 8.2 15.1 8.2 12s1.3-6 3.8-8.4Z"
+                    opacity=".6"/>
+              <path d="M6.4 16.6C9 8.9 14.6 6.6 18.6 8.6" stroke-dasharray="2.4 2.6"/>
+              <circle cx="6.4" cy="16.6" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
           <h3>Insights</h3>
           <p>Trends over a period you choose, and a map of where connections went. Country
           labels are estimated from IP addresses, so read the map as an indication rather
           than a fact about where anyone is.</p>
         </li>
         <li class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="3.5" y="4.4" width="17" height="3.3" rx="1.65" fill="currentColor" opacity=".32"/>
+              <rect x="3.5" y="10.3" width="11.5" height="3.3" rx="1.65" fill="currentColor" opacity=".6"/>
+              <rect x="3.5" y="16.2" width="6.5" height="3.3" rx="1.65" fill="currentColor"/>
+            </svg>
+          </span>
           <h3>Rules</h3>
           <p>Allow or block by exact target, by whole site, by network range, by port or
           protocol — plus country policies. Precedence is described in words, not numbers.</p>
         </li>
         <li class="card">
+          <span class="card-icon is-threat" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linejoin="round">
+              <path d="M12 3 19.6 5.8v5.9c0 4.2-3.1 7.3-7.6 8.5-4.5-1.2-7.6-4.3-7.6-8.5V5.8Z"/>
+              <circle cx="12" cy="11.4" r="1.6" fill="currentColor" stroke="none"/>
+              <path d="M8.6 11.4a3.4 3.4 0 0 1 6.8 0" opacity=".55" stroke-linecap="round"/>
+            </svg>
+          </span>
           <h3>Threat intelligence</h3>
           <p>ThreatFox already works. FluxMoat ships with a subscription to its own mirror of
           the feed, rebuilt every 6 hours, no account and no key. An abuse.ch Auth-Key is
           optional, never required.</p>
         </li>
         <li class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round">
+              <path d="M4 6.4h16M4 11.6h16M4 16.8h8"/>
+              <circle cx="17.8" cy="17.2" r="3.4" stroke="var(--blocked)"/>
+              <path d="M15.4 19.6 20.2 14.8" stroke="var(--blocked)"/>
+            </svg>
+          </span>
           <h3>Blocklists</h3>
           <p>Ads-and-malware hosts lists and threat feeds, matched on your device. Nothing
           downloads until you ask for it the first time; after that FluxMoat keeps what you
@@ -123,32 +244,32 @@
       <ol class="ladder">
         <li>
           <span class="step">1</span>
-          <span><span class="what">An exact target</span>
+          <span class="rung"><span class="what">An exact target</span>
           <span class="note">— one hostname, one IP address.</span></span>
         </li>
         <li>
           <span class="step">2</span>
-          <span><span class="what">Site-wide</span>
+          <span class="rung"><span class="what">Site-wide</span>
           <span class="note">— <code>*.example.com</code>, or a network range.</span></span>
         </li>
         <li>
           <span class="step">3</span>
-          <span><span class="what">A country policy</span>
+          <span class="rung"><span class="what">A country policy</span>
           <span class="note">— covers targets seen from that country, and new ones as they show up. Block-only, by design.</span></span>
         </li>
         <li>
           <span class="step">4</span>
-          <span><span class="what">A port or protocol rule</span>
+          <span class="rung"><span class="what">A port or protocol rule</span>
           <span class="note">— sits under all three.</span></span>
         </li>
         <li>
           <span class="step">then</span>
-          <span><span class="what">Threat feeds, then blocklists</span>
+          <span class="rung"><span class="what">Threat feeds, then blocklists</span>
           <span class="note">— checked after your rules, so a rule of yours can overrule an entry on a list.</span></span>
         </li>
         <li>
           <span class="step">last</span>
-          <span><span class="what">The mode decides</span>
+          <span class="rung"><span class="what">The mode decides</span>
           <span class="note">— Standard allows what nothing matched, Strict blocks it, Ask applies the profile default and asks you afterwards.</span></span>
         </li>
       </ol>
@@ -161,7 +282,22 @@
   </section>
 
   <!-- ---------------- honesty ---------------- -->
-  <section>
+  <section class="band-night night">
+    <svg class="band-flux" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice"
+         aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="fx3" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#73ADFA" stop-opacity="0"/>
+          <stop offset=".5" stop-color="#8FE9FF" stop-opacity=".3"/>
+          <stop offset="1" stop-color="#73ADFA" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g class="drift-slow" fill="none" stroke="url(#fx3)">
+        <path d="M-140 128C280 60 520 210 820 130S1240 40 1580 118" stroke-width="1.6"/>
+        <path d="M-140 470C300 410 540 552 840 480S1260 372 1580 452" stroke-width="1.2"/>
+      </g>
+    </svg>
+
     <div class="wrap">
       <p class="eyebrow">Know the boundaries</p>
       <h2>What FluxMoat will never claim to do</h2>
@@ -190,29 +326,62 @@
 
   <!-- ---------------- privacy ---------------- -->
   <section>
-    <div class="wrap">
+    <div class="wrap-wide">
       <p class="eyebrow">Privacy</p>
       <h2>There is no server to trust</h2>
       <p class="lede">This is the part most network apps get to be vague about. We would rather
       be specific.</p>
 
-      <ul class="cards">
+      <ul class="cards pair">
         <li class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round">
+              <rect x="6.6" y="2.6" width="10.8" height="18.8" rx="2.6"/>
+              <path d="M10.6 5.2h2.8"/>
+              <path d="M14.8 12.4a2.8 2.8 0 1 1-2.8-2.8"/>
+              <circle cx="12" cy="12.4" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
           <h3>All analysis happens on this device</h3>
           <p>The tunnel begins and ends on your iPhone. Your traffic is not routed through, or
           copied to, anything we operate.</p>
         </li>
         <li class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round">
+              <circle cx="12" cy="8.6" r="3.5"/>
+              <path d="M5.4 19.8a6.6 6.6 0 0 1 13.2 0"/>
+              <path d="M4.6 20.4 19.4 4.2" stroke-width="1.9"/>
+            </svg>
+          </span>
           <h3>No account, ever</h3>
           <p>No sign-up, no email, no device identifier, no advertising identifier. There is
           nothing to log in to.</p>
         </li>
         <li class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round">
+              <path d="M4 19.6h16"/>
+              <path d="M7.4 19.6v-5.2M12 19.6V9.2M16.6 19.6v-7.4"/>
+              <path d="M4.6 20.4 19.4 4.2" stroke-width="1.9"/>
+            </svg>
+          </span>
           <h3>No analytics, no ad SDK</h3>
           <p>Not disabled by default — absent. The app contains no analytics, advertising,
           attribution or crash-reporting SDK at all.</p>
         </li>
         <li class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round">
+              <ellipse cx="12" cy="6.4" rx="7" ry="2.8"/>
+              <path d="M5 6.4v11.2c0 1.55 3.13 2.8 7 2.8s7-1.25 7-2.8V6.4"/>
+              <path d="M5 12c0 1.55 3.13 2.8 7 2.8s7-1.25 7-2.8" opacity=".6"/>
+            </svg>
+          </span>
           <h3>History stays local</h3>
           <p>Traffic history never leaves this device unless you export it. No payloads, page
           contents or credentials are ever stored — only domains, IP addresses, ports,
@@ -220,9 +389,11 @@
         </li>
       </ul>
 
-      <p style="margin-top:1.5rem">The privacy policy lists <a href="privacy.html#endpoints">every
-      server the app can contact</a> and what makes it happen. It is a table with six rows, and
-      it is meant to stay exhaustive.</p>
+      <div class="callout plain" style="margin-top:2rem">
+        <p>The privacy policy lists <a href="privacy.html#endpoints">every
+        server the app can contact</a> and what makes it happen. It is a table with six rows, and
+        it is meant to stay exhaustive.</p>
+      </div>
     </div>
   </section>
 
@@ -242,10 +413,12 @@
         <a href="mailto:connect@hominexis.com">connect@hominexis.com</a>
       </div>
     </div>
-    <p class="fine">Coming soon to the App Store.</p>
-    <p class="fine no-track">This site sets no cookies and loads no trackers.</p>
-    <p class="fine">IP Geolocation by DB-IP. Country data &copy; DB-IP, licensed under CC BY 4.0.</p>
-    <p class="fine">&copy; 2026 Hominexis</p>
+    <div class="foot-legal">
+      <p class="fine">Coming soon to the App Store.</p>
+      <p class="fine"><span class="no-track">This site sets no cookies and loads no trackers.</span></p>
+      <p class="fine">IP Geolocation by DB-IP. Country data &copy; DB-IP, licensed under CC BY 4.0.</p>
+      <p class="fine">&copy; 2026 Hominexis</p>
+    </div>
   </div>
 </footer>
 

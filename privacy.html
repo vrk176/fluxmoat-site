@@ -5,25 +5,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — FluxMoat</title>
 <meta name="description" content="FluxMoat's privacy policy. No accounts, no analytics, no traffic data leaving your iPhone — and the complete list of every server the app can contact.">
+<link rel="canonical" href="https://fluxmoat.hominexis.com/privacy.html">
+<meta name="theme-color" content="#0a0f2a">
+
+<link rel="preload" href="assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%232E6BE0' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='5.5' fill='%2373D9FF'/%3E%3C/svg%3E">
+
+<link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/brand/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="FluxMoat">
+<meta property="og:url" content="https://fluxmoat.hominexis.com/privacy.html">
+<meta property="og:title" content="Privacy Policy — FluxMoat">
+<meta property="og:description" content="FluxMoat's privacy policy. No accounts, no analytics, no traffic data leaving your iPhone — and the complete list of every server the app can contact.">
+<meta property="og:image" content="https://fluxmoat.hominexis.com/assets/brand/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FluxMoat">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy Policy — FluxMoat">
+<meta name="twitter:description" content="FluxMoat's privacy policy. No accounts, no analytics, no traffic data leaving your iPhone — and the complete list of every server the app can contact.">
+<meta name="twitter:image" content="https://fluxmoat.hominexis.com/assets/brand/og.png">
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <linearGradient id="fmRing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A9D6FF"/>
+      <stop offset=".5" stop-color="#4B93F2"/>
+      <stop offset="1" stop-color="#2E6BE0"/>
+    </linearGradient>
+    <linearGradient id="fmWave" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#3F86EE"/>
+      <stop offset=".55" stop-color="#8FE9FF"/>
+      <stop offset="1" stop-color="#E4F8FF"/>
+    </linearGradient>
+    <symbol id="fm-mark" viewBox="0 0 32 32">
+      <path d="M23.8 8.2A11 11 0 1 0 23.8 23.8" fill="none" stroke="url(#fmRing)"
+            stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M5.4 21.8C11.4 15.4 18.4 23.2 29.2 10.6" fill="none" stroke="url(#fmWave)"
+            stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="28.6" cy="6.4" r="1.15" fill="#8FE9FF"/>
+      <circle cx="30.7" cy="10.2" r=".78" fill="#8FE9FF" opacity=".7"/>
+    </symbol>
+  </defs>
+</svg>
+
 <header class="site-head">
   <div class="wrap-wide">
     <a class="brand" href="index.html">
-      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
-        <defs>
-          <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#73ADFA"/><stop offset="1" stop-color="#2E6BE0"/>
-          </linearGradient>
-        </defs>
-        <circle cx="16" cy="16" r="13" fill="none" stroke="url(#pg)" stroke-width="2.5"/>
-        <circle cx="16" cy="16" r="5.5" fill="#73D9FF"/>
-      </svg>
+      <svg class="ring" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><use href="#fm-mark"/></svg>
       FluxMoat
     </a>
     <nav class="nav">
@@ -35,272 +71,300 @@
 </header>
 
 <main id="main" class="prose">
-<div class="wrap">
+<div class="wrap-wide">
 
-  <h1>Privacy Policy</h1>
-  <p class="meta">Effective 31 August 2026 &middot; FluxMoat for iOS &middot; Hominexis</p>
-
-  <div class="callout plain">
-    <p><strong>The short version.</strong> FluxMoat has no accounts and no servers that
-    hold your data. Every packet it inspects is inspected on your iPhone and stays there.
-    We do not receive your browsing history, your DNS lookups, your rules, or any
-    identifier for you or your device — not in aggregate, not anonymised, not at all.
-    There is no analytics SDK and no advertising SDK in the app.</p>
-    <p>This page also lists <a href="#endpoints">every server the app can contact</a>, and
-    what makes it happen. That list is short and it is complete. The app asks for exactly
-    one system permission beyond the VPN itself — <a href="#location">approximate location</a>,
-    only when you open the world map, only to draw the near end of the lines on it.</p>
+  <div class="page-head">
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective 31 August 2026 &middot; FluxMoat for iOS &middot; Hominexis</p>
   </div>
 
-  <h2 id="collect">What we collect</h2>
+  <div class="doc">
 
-  <p>Nothing. We operate no account system, no telemetry endpoint, and no backend that
-  receives data from the app. There is no sign-up, no email address, no device
-  identifier, and no advertising identifier.</p>
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#collect">What we collect</a></li>
+        <li><a href="#ondevice">What stays on your device</a></li>
+        <li><a href="#cannot">What FluxMoat cannot do</a></li>
+        <li><a href="#endpoints">Every server the app can contact</a></li>
+        <li><a href="#blocklists">Blocklists and threat intelligence</a></li>
+        <li><a href="#icloud">iCloud sync</a></li>
+        <li><a href="#location">Country estimates, and the one location prompt</a></li>
+        <li><a href="#diagnostics">Diagnostic reports</a></li>
+        <li><a href="#thirdparty">Third-party code and tracking</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#rights">Your data rights</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
 
-  <p>Because there is no collection, there is also nothing for us to sell, share,
-  disclose to a partner, or hand over on request. We cannot produce your traffic history
-  because we have never had it.</p>
+    <div class="doc-body">
 
-  <h2 id="ondevice">What stays on your device</h2>
+      <div class="callout plain">
+        <p><strong>The short version.</strong> FluxMoat has no accounts and no servers that
+        hold your data. Every packet it inspects is inspected on your iPhone and stays there.
+        We do not receive your browsing history, your DNS lookups, your rules, or any
+        identifier for you or your device — not in aggregate, not anonymised, not at all.
+        There is no analytics SDK and no advertising SDK in the app.</p>
+        <p>This page also lists <a href="#endpoints">every server the app can contact</a>, and
+        what makes it happen. That list is short and it is complete. The app asks for exactly
+        one system permission beyond the VPN itself — <a href="#location">approximate location</a>,
+        only when you open the world map, only to draw the near end of the lines on it.</p>
+      </div>
 
-  <p>All traffic analysis happens on-device, inside the packet tunnel extension. FluxMoat
-  records a compact summary of each connection into a local database on your iPhone, so
-  that the Dashboard, Live Traffic and Insights screens have something to show you.</p>
+      <h2 id="collect">What we collect</h2>
 
-  <p>Per connection, it stores: timestamp, remote IP address, DNS-derived domain (when
-  available), port, protocol number, byte counts, verdict, matched rule, profile, country
-  code, and network type — and nothing else.</p>
+      <p>Nothing. We operate no account system, no telemetry endpoint, and no backend that
+      receives data from the app. There is no sign-up, no email address, no device
+      identifier, and no advertising identifier.</p>
 
-  <p>It never stores packet payloads, HTTP bodies, TLS plaintext, URLs beyond hostnames,
-  anything you type, or credentials.</p>
+      <p>Because there is no collection, there is also nothing for us to sell, share,
+      disclose to a partner, or hand over on request. We cannot produce your traffic history
+      because we have never had it.</p>
 
-  <p>You choose how long that local history is kept: 7 days, 30 days, 90 days, 6 months,
-  or 12 months. The default is 30 days. Anything older is pruned automatically.
-  Settings has a one-tap clear for traffic history and a one-tap clear for all
-  configuration.</p>
+      <h2 id="ondevice">What stays on your device</h2>
 
-  <h2 id="cannot">What FluxMoat cannot do</h2>
+      <p>All traffic analysis happens on-device, inside the packet tunnel extension. FluxMoat
+      records a compact summary of each connection into a local database on your iPhone, so
+      that the Dashboard, Live Traffic and Insights screens have something to show you.</p>
 
-  <p>These are structural limits, not policy choices, and the app states them at first
-  launch:</p>
+      <p>Per connection, it stores: timestamp, remote IP address, DNS-derived domain (when
+      available), port, protocol number, byte counts, verdict, matched rule, profile, country
+      code, and network type — and nothing else.</p>
 
-  <ul>
-    <li>Network activity is shown for the whole device. iOS doesn't identify the originating app.</li>
-    <li>Encrypted content stays encrypted.</li>
-    <li>Alerts don't pause a connection while waiting for your response.</li>
-    <li>Locations are estimates and may be inaccurate.</li>
-    <li>iOS allows one VPN of this kind at a time.</li>
-  </ul>
+      <p>It never stores packet payloads, HTTP bodies, TLS plaintext, URLs beyond hostnames,
+      anything you type, or credentials.</p>
 
-  <p>FluxMoat does not decrypt HTTPS, does not install a root certificate, and does not
-  inspect the contents of encrypted connections. It cannot, and it never asks you to let
-  it. Your traffic is not routed through any server we operate — the tunnel begins and
-  ends on your iPhone.</p>
+      <p>You choose how long that local history is kept: 7 days, 30 days, 90 days, 6 months,
+      or 12 months. The default is 30 days. Anything older is pruned automatically.
+      Settings has a one-tap clear for traffic history and a one-tap clear for all
+      configuration.</p>
 
-  <h2 id="endpoints">Every server the app can contact</h2>
+      <h2 id="cannot">What FluxMoat cannot do</h2>
 
-  <p>FluxMoat itself reaches the network in exactly the situations below. As with any
-  HTTPS request, whoever operates the server on the other end can see your IP address and
-  the time of the request. All list downloads are HTTPS-only; plain HTTP is rejected.</p>
+      <p>These are structural limits, not policy choices, and the app states them at first
+      launch:</p>
 
-  <div class="table-scroll">
-  <table>
-    <thead>
-      <tr><th>Destination</th><th>What triggers it</th><th>What is sent</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>feeds.hominexis.com</code><br>ThreatFox mirror (ours)</td>
-        <td>The subscription is present after install, but nothing downloads until you tap
-        Update. After your first download, the app re-checks it at most once every six
-        hours while it is in the foreground.</td>
-        <td>An ordinary HTTPS GET, plus an <code>If-None-Match</code> caching header so an
-        unchanged list costs nothing. No account, no key.</td>
-      </tr>
-      <tr>
-        <td><code>raw.githubusercontent.com</code><br>StevenBlack hosts list</td>
-        <td>Same: your first tap, then six-hourly re-checks of a list you already chose to
-        download.</td>
-        <td>An ordinary HTTPS GET plus the caching header. No account, no key.</td>
-      </tr>
-      <tr>
-        <td><code>feodotracker.abuse.ch</code><br>Feodo Tracker botnet C2 list</td>
-        <td>Same: your first tap, then six-hourly re-checks.</td>
-        <td>An ordinary HTTPS GET plus the caching header. No key needed for this list.</td>
-      </tr>
-      <tr>
-        <td><code>abuse.ch</code> and its subdomains</td>
-        <td>Only if you have chosen to paste a free abuse.ch Auth-Key into Settings and
-        subscribed to a feed hosted there. Optional; the app works fully without it.</td>
-        <td>The key, as an <code>Auth-Key</code> header. The key is stored in the Keychain
-        and only ever sent to abuse.ch. The app checks a subscription's host before it will
-        attach the key, so it cannot reach a third-party list URL.</td>
-      </tr>
-      <tr>
-        <td>The DNS-over-HTTPS resolver you pick</td>
-        <td>Off by default; FluxMoat uses system DNS until you choose otherwise. If you
-        select Quad9, Cloudflare, or your own endpoint, hostname lookups go there.</td>
-        <td>Your DNS queries. The resolver you choose sees them, exactly as it would for
-        any DoH client. We are not in that path and never see them.</td>
-      </tr>
-      <tr>
-        <td>Apple iCloud (CloudKit)<br>container <code>iCloud.Hominexis.fluxmoat</code></td>
-        <td>Opt-in and <strong>off by default</strong>. Only if you turn on config sync in
-        Settings.</td>
-        <td>Configuration only — see below. It goes to <em>your</em> private CloudKit
-        database, scoped to your Apple Account. We operate no server in this path and can
-        read none of it.</td>
-      </tr>
-    </tbody>
-  </table>
+      <ul>
+        <li>Network activity is shown for the whole device. iOS doesn't identify the originating app.</li>
+        <li>Encrypted content stays encrypted.</li>
+        <li>Alerts don't pause a connection while waiting for your response.</li>
+        <li>Locations are estimates and may be inaccurate.</li>
+        <li>iOS allows one VPN of this kind at a time.</li>
+      </ul>
+
+      <p>FluxMoat does not decrypt HTTPS, does not install a root certificate, and does not
+      inspect the contents of encrypted connections. It cannot, and it never asks you to let
+      it. Your traffic is not routed through any server we operate — the tunnel begins and
+      ends on your iPhone.</p>
+
+      <h2 id="endpoints">Every server the app can contact</h2>
+
+      <p>FluxMoat itself reaches the network in exactly the situations below. As with any
+      HTTPS request, whoever operates the server on the other end can see your IP address and
+      the time of the request. All list downloads are HTTPS-only; plain HTTP is rejected.</p>
+
+      <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Destination</th><th>What triggers it</th><th>What is sent</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>feeds.hominexis.com</code><br>ThreatFox mirror (ours)</td>
+            <td>The subscription is present after install, but nothing downloads until you tap
+            Update. After your first download, the app re-checks it at most once every six
+            hours while it is in the foreground.</td>
+            <td>An ordinary HTTPS GET, plus an <code>If-None-Match</code> caching header so an
+            unchanged list costs nothing. No account, no key.</td>
+          </tr>
+          <tr>
+            <td><code>raw.githubusercontent.com</code><br>StevenBlack hosts list</td>
+            <td>Same: your first tap, then six-hourly re-checks of a list you already chose to
+            download.</td>
+            <td>An ordinary HTTPS GET plus the caching header. No account, no key.</td>
+          </tr>
+          <tr>
+            <td><code>feodotracker.abuse.ch</code><br>Feodo Tracker botnet C2 list</td>
+            <td>Same: your first tap, then six-hourly re-checks.</td>
+            <td>An ordinary HTTPS GET plus the caching header. No key needed for this list.</td>
+          </tr>
+          <tr>
+            <td><code>abuse.ch</code> and its subdomains</td>
+            <td>Only if you have chosen to paste a free abuse.ch Auth-Key into Settings and
+            subscribed to a feed hosted there. Optional; the app works fully without it.</td>
+            <td>The key, as an <code>Auth-Key</code> header. The key is stored in the Keychain
+            and only ever sent to abuse.ch. The app checks a subscription's host before it will
+            attach the key, so it cannot reach a third-party list URL.</td>
+          </tr>
+          <tr>
+            <td>The DNS-over-HTTPS resolver you pick</td>
+            <td>Off by default; FluxMoat uses system DNS until you choose otherwise. If you
+            select Quad9, Cloudflare, or your own endpoint, hostname lookups go there.</td>
+            <td>Your DNS queries. The resolver you choose sees them, exactly as it would for
+            any DoH client. We are not in that path and never see them.</td>
+          </tr>
+          <tr>
+            <td>Apple iCloud (CloudKit)<br>container <code>iCloud.Hominexis.fluxmoat</code></td>
+            <td>Opt-in and <strong>off by default</strong>. Only if you turn on config sync in
+            Settings.</td>
+            <td>Configuration only — see below. It goes to <em>your</em> private CloudKit
+            database, scoped to your Apple Account. We operate no server in this path and can
+            read none of it.</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>That is the complete list of destinations the app ships with. One more can exist only
+      because you create it: if you add your own blocklist subscription, FluxMoat downloads it
+      from whatever HTTPS address you entered, on the same terms as the rows above. Your
+      abuse.ch key is never attached to such a request unless the address is on
+      <code>abuse.ch</code> itself — the app checks the host before it will send the key
+      anywhere.</p>
+
+      <p>Beyond those, there is no other network destination in the app. No telemetry ping, no
+      licence check, no update check, no crash upload, no push registration.</p>
+
+      <p>A note on the first row, because we would rather say it than have you find it: the
+      ThreatFox mirror is hosted by us. It serves a static file over HTTPS. It has no account
+      system and receives nothing about you beyond what any web server necessarily sees when
+      a file is requested — an IP address, a timestamp, and the name of the file. We do not
+      join those records to anything, because there is nothing to join them to.</p>
+
+      <h2 id="blocklists">Blocklists and threat intelligence</h2>
+
+      <p>FluxMoat arrives with three subscriptions already listed: an ads-and-malware hosts
+      list, and two threat-intelligence feeds. None of them is downloaded until you ask for
+      it. The rule the app holds itself to is that the first download of a subscription is
+      always your own tap — a blocklist nobody asked for must never appear out of a silent
+      fetch. After that, keeping it fresh is maintenance of a decision you already made, so
+      the app does it for you at most every six hours while it is open.</p>
+
+      <p>The ThreatFox mirror republishes indicators from
+      <a href="https://threatfox.abuse.ch/">abuse.ch ThreatFox</a>, released under CC0 1.0,
+      rebuilt every six hours. It is an unofficial third-party mirror and is not operated,
+      endorsed, or supported by abuse.ch.</p>
+
+      <p>Matching happens entirely on your device. The lists come to your phone; your traffic
+      never goes to the lists.</p>
+
+      <h2 id="icloud">iCloud sync</h2>
+
+      <p>Config sync is opt-in and off by default. When you turn it on, this is what the app
+      tells you, and it is the term the opt-in is given against:</p>
+
+      <div class="callout">
+        <p>Syncs rules, settings, Wi-Fi automation and blocklist subscriptions between your
+        devices through your private iCloud database. Traffic history and the abuse.ch key
+        never sync. A rule deleted on one device stays deleted; if a device was offline for
+        more than 30 days, the rule may reappear there and need deleting again.</p>
+      </div>
+
+      <p>In more detail. What syncs: your rules, rule deletion tombstones, run mode, DoH
+      choice, the encrypted-DNS-block switch, retention setting, quiet hours, Wi-Fi-to-profile
+      assignments (including SSIDs you typed into the configuration), blocklist subscription
+      metadata (name, URL, format, category, enabled), and manual blocklist domains.</p>
+
+      <p>Worth being blunt about what that means, because "rules and settings" sounds smaller
+      than it is: a rule is written <em>about</em> something, so your rules carry the domain names,
+      IP addresses and network ranges you wrote them about, along with any note you typed on
+      them. Wi-Fi automation carries the names of your networks. If you set a custom DNS
+      resolver, its URL goes too. None of that reaches us — it goes to your private iCloud
+      database — but it does leave the phone, and you should turn the switch on knowing that.</p>
+
+      <p>What never syncs: traffic history and events, the downloaded contents of any
+      blocklist, and the abuse.ch Auth-Key or any other credential.</p>
+
+      <p>Retention in iCloud: one current-state record, overwritten in place. Deletion
+      tombstones expire after 30 days — which is where the caveat above comes from. Turning
+      sync off stops writes; data already in your iCloud account stays until you clear it
+      through iOS Settings, because it is yours and not ours to delete.</p>
+
+      <p>The destination is your own private CloudKit database, scoped to your Apple Account.
+      Hominexis operates no server in this path and cannot read its contents. The packet
+      tunnel extension has no CloudKit entitlement at all, by design.</p>
+
+      <h2 id="location">Country estimates, and the one location prompt</h2>
+
+      <p>FluxMoat labels connections with a country so the Insights map and country rules can
+      work. That label is estimated from the remote IP address using a database bundled inside
+      the app. No geolocation lookup touches the network — your IP addresses are never sent
+      anywhere to be resolved into places.</p>
+
+      <p>IP-to-country estimation is inherently approximate — VPNs, CDNs, cloud regions, and
+      stale registry data all move the answer. Treat the map as an indication, not a fact about
+      where anyone is.</p>
+
+      <h3>Your own location</h3>
+
+      <p>There is exactly one place FluxMoat asks for your location, and we would rather name it
+      than let you meet it unannounced. The world map draws each connection as a line from
+      roughly where you are to roughly where the other end is. To draw the near end of those
+      lines, the map asks for when-in-use location access, at iOS's <em>reduced</em> (city-level)
+      accuracy — the prompt appears only when you first open Insights &rarr; Map, not at launch.</p>
+
+      <p>As the permission prompt itself says: <em>Your approximate location is used only to draw
+      connection lines on the world map. It never leaves this device.</em> The coordinate is held
+      in memory while the map is on screen. It is never written to disk, never logged, never
+      attached to a connection record, and never transmitted.</p>
+
+      <p>Declining is a first-class option. If you say no, the map simply draws no origin lines
+      and everything else keeps working. You are not asked again and nothing nags you.</p>
+
+      <p>Separately: reading the name of the Wi-Fi network you are on, for Wi-Fi automation, does
+      <em>not</em> use location access. That name is read through the active VPN session.</p>
+
+      <p>IP Geolocation by DB-IP. Country data &copy; DB-IP, licensed under CC BY 4.0. Lookups
+      happen entirely on this device.</p>
+
+      <h2 id="diagnostics">Diagnostic reports</h2>
+
+      <p>Settings can generate a diagnostic report to help us with a support question. It is
+      never sent automatically. It is generated on demand, shown to you, and goes nowhere
+      unless you share it yourself through the iOS share sheet.</p>
+
+      <p>Its scope, as printed on the report itself: <em>Settings and counts only. No logs,
+      domains, IP addresses, network names or keys are included.</em></p>
+
+      <h2 id="thirdparty">Third-party code and tracking</h2>
+
+      <p>FluxMoat contains no analytics SDK, no advertising SDK, no crash-reporting SDK, and
+      no attribution or A/B-testing SDK. The app's only third-party component is the
+      open-source <a href="https://github.com/eycorsican/leaf">leaf</a> tunnel engine, which
+      is compiled into the app when we build it and makes no network calls of its own.</p>
+
+      <p>There are no cookies, no web views used for tracking, and no third party that
+      receives a copy of anything.</p>
+
+      <h2 id="children">Children</h2>
+
+      <p>FluxMoat is not directed at children and collects no personal information from anyone,
+      regardless of age.</p>
+
+      <h2 id="rights">Your data rights</h2>
+
+      <p>Data-protection law gives you rights to access, correct, export, and delete the
+      personal data a company holds about you. We hold none, so there is nothing for us to
+      produce or erase. The data the app creates is on your device and under your control:
+      Settings offers rule export, one-tap clearing of traffic history, and one-tap clearing
+      of all configuration. Deleting the app removes it all.</p>
+
+      <h2 id="changes">Changes to this policy</h2>
+
+      <p>If the app's behaviour changes in a way that affects this page — a new endpoint, a new
+      stored field — we will update this page and move the effective date. The endpoint table
+      above is meant to stay exhaustive, and we would rather revise it than quietly outgrow
+      it.</p>
+
+      <h2 id="contact">Contact</h2>
+
+      <p>Questions about this policy, or about anything the app does:
+      <a href="mailto:connect@hominexis.com">connect@hominexis.com</a>.</p>
+
+    </div>
   </div>
-
-  <p>That is the complete list of destinations the app ships with. One more can exist only
-  because you create it: if you add your own blocklist subscription, FluxMoat downloads it
-  from whatever HTTPS address you entered, on the same terms as the rows above. Your
-  abuse.ch key is never attached to such a request unless the address is on
-  <code>abuse.ch</code> itself — the app checks the host before it will send the key
-  anywhere.</p>
-
-  <p>Beyond those, there is no other network destination in the app. No telemetry ping, no
-  licence check, no update check, no crash upload, no push registration.</p>
-
-  <p>A note on the first row, because we would rather say it than have you find it: the
-  ThreatFox mirror is hosted by us. It serves a static file over HTTPS. It has no account
-  system and receives nothing about you beyond what any web server necessarily sees when
-  a file is requested — an IP address, a timestamp, and the name of the file. We do not
-  join those records to anything, because there is nothing to join them to.</p>
-
-  <h2 id="blocklists">Blocklists and threat intelligence</h2>
-
-  <p>FluxMoat arrives with three subscriptions already listed: an ads-and-malware hosts
-  list, and two threat-intelligence feeds. None of them is downloaded until you ask for
-  it. The rule the app holds itself to is that the first download of a subscription is
-  always your own tap — a blocklist nobody asked for must never appear out of a silent
-  fetch. After that, keeping it fresh is maintenance of a decision you already made, so
-  the app does it for you at most every six hours while it is open.</p>
-
-  <p>The ThreatFox mirror republishes indicators from
-  <a href="https://threatfox.abuse.ch/">abuse.ch ThreatFox</a>, released under CC0 1.0,
-  rebuilt every six hours. It is an unofficial third-party mirror and is not operated,
-  endorsed, or supported by abuse.ch.</p>
-
-  <p>Matching happens entirely on your device. The lists come to your phone; your traffic
-  never goes to the lists.</p>
-
-  <h2 id="icloud">iCloud sync</h2>
-
-  <p>Config sync is opt-in and off by default. When you turn it on, this is what the app
-  tells you, and it is the term the opt-in is given against:</p>
-
-  <div class="callout">
-    <p>Syncs rules, settings, Wi-Fi automation and blocklist subscriptions between your
-    devices through your private iCloud database. Traffic history and the abuse.ch key
-    never sync. A rule deleted on one device stays deleted; if a device was offline for
-    more than 30 days, the rule may reappear there and need deleting again.</p>
-  </div>
-
-  <p>In more detail. What syncs: your rules, rule deletion tombstones, run mode, DoH
-  choice, the encrypted-DNS-block switch, retention setting, quiet hours, Wi-Fi-to-profile
-  assignments (including SSIDs you typed into the configuration), blocklist subscription
-  metadata (name, URL, format, category, enabled), and manual blocklist domains.</p>
-
-  <p>Worth being blunt about what that means, because "rules and settings" sounds smaller
-  than it is: a rule is written <em>about</em> something, so your rules carry the domain names,
-  IP addresses and network ranges you wrote them about, along with any note you typed on
-  them. Wi-Fi automation carries the names of your networks. If you set a custom DNS
-  resolver, its URL goes too. None of that reaches us — it goes to your private iCloud
-  database — but it does leave the phone, and you should turn the switch on knowing that.</p>
-
-  <p>What never syncs: traffic history and events, the downloaded contents of any
-  blocklist, and the abuse.ch Auth-Key or any other credential.</p>
-
-  <p>Retention in iCloud: one current-state record, overwritten in place. Deletion
-  tombstones expire after 30 days — which is where the caveat above comes from. Turning
-  sync off stops writes; data already in your iCloud account stays until you clear it
-  through iOS Settings, because it is yours and not ours to delete.</p>
-
-  <p>The destination is your own private CloudKit database, scoped to your Apple Account.
-  Hominexis operates no server in this path and cannot read its contents. The packet
-  tunnel extension has no CloudKit entitlement at all, by design.</p>
-
-  <h2 id="location">Country estimates, and the one location prompt</h2>
-
-  <p>FluxMoat labels connections with a country so the Insights map and country rules can
-  work. That label is estimated from the remote IP address using a database bundled inside
-  the app. No geolocation lookup touches the network — your IP addresses are never sent
-  anywhere to be resolved into places.</p>
-
-  <p>IP-to-country estimation is inherently approximate — VPNs, CDNs, cloud regions, and
-  stale registry data all move the answer. Treat the map as an indication, not a fact about
-  where anyone is.</p>
-
-  <h3>Your own location</h3>
-
-  <p>There is exactly one place FluxMoat asks for your location, and we would rather name it
-  than let you meet it unannounced. The world map draws each connection as a line from
-  roughly where you are to roughly where the other end is. To draw the near end of those
-  lines, the map asks for when-in-use location access, at iOS's <em>reduced</em> (city-level)
-  accuracy — the prompt appears only when you first open Insights &rarr; Map, not at launch.</p>
-
-  <p>As the permission prompt itself says: <em>Your approximate location is used only to draw
-  connection lines on the world map. It never leaves this device.</em> The coordinate is held
-  in memory while the map is on screen. It is never written to disk, never logged, never
-  attached to a connection record, and never transmitted.</p>
-
-  <p>Declining is a first-class option. If you say no, the map simply draws no origin lines
-  and everything else keeps working. You are not asked again and nothing nags you.</p>
-
-  <p>Separately: reading the name of the Wi-Fi network you are on, for Wi-Fi automation, does
-  <em>not</em> use location access. That name is read through the active VPN session.</p>
-
-  <p>IP Geolocation by DB-IP. Country data &copy; DB-IP, licensed under CC BY 4.0. Lookups
-  happen entirely on this device.</p>
-
-  <h2 id="diagnostics">Diagnostic reports</h2>
-
-  <p>Settings can generate a diagnostic report to help us with a support question. It is
-  never sent automatically. It is generated on demand, shown to you, and goes nowhere
-  unless you share it yourself through the iOS share sheet.</p>
-
-  <p>Its scope, as printed on the report itself: <em>Settings and counts only. No logs,
-  domains, IP addresses, network names or keys are included.</em></p>
-
-  <h2 id="thirdparty">Third-party code and tracking</h2>
-
-  <p>FluxMoat contains no analytics SDK, no advertising SDK, no crash-reporting SDK, and
-  no attribution or A/B-testing SDK. The app's only third-party component is the
-  open-source <a href="https://github.com/eycorsican/leaf">leaf</a> tunnel engine, which
-  is compiled into the app when we build it and makes no network calls of its own.</p>
-
-  <p>There are no cookies, no web views used for tracking, and no third party that
-  receives a copy of anything.</p>
-
-  <h2 id="children">Children</h2>
-
-  <p>FluxMoat is not directed at children and collects no personal information from anyone,
-  regardless of age.</p>
-
-  <h2 id="rights">Your data rights</h2>
-
-  <p>Data-protection law gives you rights to access, correct, export, and delete the
-  personal data a company holds about you. We hold none, so there is nothing for us to
-  produce or erase. The data the app creates is on your device and under your control:
-  Settings offers rule export, one-tap clearing of traffic history, and one-tap clearing
-  of all configuration. Deleting the app removes it all.</p>
-
-  <h2 id="changes">Changes to this policy</h2>
-
-  <p>If the app's behaviour changes in a way that affects this page — a new endpoint, a new
-  stored field — we will update this page and move the effective date. The endpoint table
-  above is meant to stay exhaustive, and we would rather revise it than quietly outgrow
-  it.</p>
-
-  <h2 id="contact">Contact</h2>
-
-  <p>Questions about this policy, or about anything the app does:
-  <a href="mailto:connect@hominexis.com">connect@hominexis.com</a>.</p>
 
 </div>
 </main>
@@ -319,9 +383,11 @@
         <a href="mailto:connect@hominexis.com">connect@hominexis.com</a>
       </div>
     </div>
-    <p class="fine">Coming soon to the App Store.</p>
-    <p class="fine no-track">This site sets no cookies and loads no trackers.</p>
-    <p class="fine">&copy; 2026 Hominexis</p>
+    <div class="foot-legal">
+      <p class="fine">Coming soon to the App Store.</p>
+      <p class="fine"><span class="no-track">This site sets no cookies and loads no trackers.</span></p>
+      <p class="fine">&copy; 2026 Hominexis</p>
+    </div>
   </div>
 </footer>
 
