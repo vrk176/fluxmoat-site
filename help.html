@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help — FluxMoat</title>
+<meta name="description" content="Answers to the questions FluxMoat gets asked most: per-app traffic, HTTPS, where traffic goes, rule precedence, threat feeds, battery, and clearing your data.">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%232E6BE0' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='5.5' fill='%2373D9FF'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap-wide">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <linearGradient id="hlg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#73ADFA"/><stop offset="1" stop-color="#2E6BE0"/>
+          </linearGradient>
+        </defs>
+        <circle cx="16" cy="16" r="13" fill="none" stroke="url(#hlg)" stroke-width="2.5"/>
+        <circle cx="16" cy="16" r="5.5" fill="#73D9FF"/>
+      </svg>
+      FluxMoat
+    </a>
+    <nav class="nav">
+      <a href="index.html">Overview</a>
+      <a href="help.html" aria-current="page">Help</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="prose">
+<div class="wrap">
+
+  <h1>Help</h1>
+  <p class="meta">The questions worth answering before you have to ask them.</p>
+
+  <h2>What FluxMoat can and cannot see</h2>
+
+  <div class="faq">
+
+    <details>
+      <summary>Why can't I see which app a connection belongs to?</summary>
+      <div class="answer">
+        <p>Because iOS does not tell us. Network activity is shown for the whole device;
+        iOS doesn't identify the originating app.</p>
+        <p>A consumer packet tunnel on iPhone receives packets, not process identities.
+        There is no API that maps a connection back to the app that opened it, and no
+        clever workaround that produces a trustworthy answer. Anything on iOS claiming a
+        confident per-app breakdown is inferring it from destination names — which is a
+        guess, and wrong often enough to matter.</p>
+        <p>What you can do is read the destinations. In practice a handful of domains
+        identify a service unambiguously, and Live Traffic groups by target so the pattern
+        is usually legible even without app names.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Will FluxMoat decrypt my HTTPS traffic?</summary>
+      <div class="answer">
+        <p>No — and it cannot. Encrypted content stays encrypted.</p>
+        <p>FluxMoat does not install a root certificate, does not run a TLS intercepting
+        proxy, and never asks you to trust a profile that would let it read inside your
+        connections. It works from what is visible on the outside of a connection:
+        destination address, hostname where DNS revealed one, port, protocol, and byte
+        counts.</p>
+        <p>This is a deliberate limit, not a missing feature. An app that could read your
+        encrypted traffic would be a far larger risk to you than the traffic it was
+        inspecting.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Does my traffic pass through your servers?</summary>
+      <div class="answer">
+        <p>No. FluxMoat observes and filters network activity locally. Your traffic never
+        passes through servers operated by FluxMoat.</p>
+        <p>The VPN profile FluxMoat asks iOS to install is not a remote VPN. It is a local
+        tunnel: iOS hands packets to an extension running on your own iPhone, that
+        extension inspects and forwards them, and they go straight to their original
+        destination. Nothing is relayed to us. There is no server of ours in the path
+        because there is no server of ours at all.</p>
+        <p>The only things FluxMoat downloads are blocklists, and the complete list of
+        where those come from is in the <a href="privacy.html#endpoints">privacy
+        policy</a>.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How accurate is the map?</summary>
+      <div class="answer">
+        <p>Treat it as an estimate. Locations are estimates and may be inaccurate.</p>
+        <p>Country labels come from looking up the remote IP address in a database bundled
+        inside the app. That is a reasonable guess about where an address is registered,
+        which is not the same as where a server sits or where a company is. A CDN edge, a
+        cloud region, a corporate VPN, or a stale registry entry will all move the answer.</p>
+        <p>It is genuinely useful for spotting that your phone talks to a country you did
+        not expect. It is not evidence of where anybody is.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Why did my other VPN switch off?</summary>
+      <div class="answer">
+        <p>iOS allows one VPN of this kind at a time. Turning FluxMoat on turns the other
+        one off, and turning the other one on turns FluxMoat off. This is enforced by iOS
+        and no app can work around it.</p>
+        <p>The same fact has a consequence worth stating plainly: blocking in FluxMoat is a
+        control, not a security boundary. Turning the tunnel off stops the filtering.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Does FluxMoat use my location?</summary>
+      <div class="answer">
+        <p>In one place only. The world map draws lines from roughly where you are to
+        roughly where each connection went, and it needs a rough origin to do that. The
+        first time you open Insights &rarr; Map, iOS asks for when-in-use location at
+        <em>reduced</em> (city-level) accuracy.</p>
+        <p>That coordinate stays in memory while the map is open. It is never saved,
+        logged, attached to a connection record, or transmitted. If you decline, the map
+        drops the origin lines and carries on; nothing else changes and you are not asked
+        again.</p>
+        <p>Reading your Wi-Fi network name for Wi-Fi automation is separate and does not
+        use location access.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2>Rules and filtering</h2>
+
+  <div class="faq">
+
+    <details>
+      <summary>How is rule priority decided? I can't find a priority field.</summary>
+      <div class="answer">
+        <p>There isn't one, on purpose. FluxMoat decides by how far a rule reaches, not by a
+        number you assign. The narrower the target, the more it wins:</p>
+        <ol>
+          <li>A rule for an <strong>exact target</strong> — one hostname, one IP.</li>
+          <li>Beats a <strong>site-wide</strong> rule — <code>*.example.com</code>, or a
+          network range.</li>
+          <li>Which beats a <strong>country policy</strong>.</li>
+          <li>And a <strong>port or protocol</strong> rule sits under all three.</li>
+        </ol>
+        <p>When two rules reach equally far and disagree, Allow wins. That tie-break is
+        between rules of the same reach — a broad Allow never overrides a narrow Block.</p>
+        <p>Your rules, country policies included, are checked <em>before</em> threat feeds
+        and blocklists, so a rule of yours can overrule a list entry. Whatever none of them
+        matched is left to the mode: Standard allows it, Strict blocks it, Ask applies the
+        current profile's default and asks you afterwards.</p>
+        <p>Earlier versions had a 0&ndash;100 priority stepper. It was removed, and the
+        removal is the feature — "Site-wide" tells you a rule for one host inside it will
+        win, where "Priority 10" told you nothing unless you already knew what every other
+        rule was sitting on.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Are country policies allow or block?</summary>
+      <div class="answer">
+        <p>Block only. A country policy covers targets seen from that country, and new ones
+        as they show up. There is deliberately no allow direction — a country-wide allow
+        would be a very broad statement built on an IP-address estimate, which is not a
+        foundation worth putting an allow on.</p>
+        <p>A target's own rule still wins over the country policy.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Why doesn't my ICMP rule do anything?</summary>
+      <div class="answer">
+        <p>Ping (ICMP) traffic isn't filtered yet, so ICMP rules have no effect. The rule
+        editor says so at the moment you pick ICMP, rather than letting you build a rule
+        and wonder later why it never fires.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Some app is getting past my domain rules. Why?</summary>
+      <div class="answer">
+        <p>Most likely it resolves its own names. Apps using their own encrypted DNS may
+        bypass domain-based filtering; IP rules still apply.</p>
+        <p>If an app ships its own DNS-over-HTTPS client pointed at its own endpoint, its
+        lookups never pass through anything FluxMoat can read, so there is no hostname to
+        match a domain rule against. Settings has a "Block other encrypted DNS" switch that
+        closes the common cases by blocking known public resolver endpoints, but an app
+        aimed at a private endpoint of its own is a permanent blind spot and no list of
+        public resolvers can close it. Blocking by IP address or range still works, because
+        the packets still have to go somewhere.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Why didn't Ask mode stop the connection while it asked me?</summary>
+      <div class="answer">
+        <p>Alerts don't pause a connection while waiting for your response. Ask mode is
+        asynchronous and notification-driven: the connection is handled by the current
+        profile's default, you are asked afterwards, and your answer shapes what happens
+        next time.</p>
+        <p>This is not the desktop-style blocking dialog some firewalls use. iOS does not
+        let a packet tunnel hold a connection open waiting on a human, so the app is
+        labelled for what it actually does.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2>Blocklists and threat intelligence</h2>
+
+  <div class="faq">
+
+    <details>
+      <summary>Where does the threat intelligence come from, and how current is it?</summary>
+      <div class="answer">
+        <p>ThreatFox already works out of the box. FluxMoat ships with a subscription to its
+        own mirror of the feed, rebuilt every 6 hours, no account and no key.</p>
+        <p>The indicators come from <a href="https://threatfox.abuse.ch/">abuse.ch
+        ThreatFox</a> and are released under CC0 1.0. Our mirror republishes the domain and
+        IP indicators a packet tunnel can actually act on, filtered to what is still current.
+        It is an unofficial third-party mirror and is not operated, endorsed, or supported by
+        abuse.ch — problems with the mirror belong with us, not with them.</p>
+        <p>On your phone, an enabled list refreshes itself when you open the app, checked
+        every few hours at most, and is left alone on Low Data Mode. A brand-new
+        subscription waits for your first Update.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Why didn't my blocklists download by themselves?</summary>
+      <div class="answer">
+        <p>Because the first download is always your decision. FluxMoat arrives with a few
+        subscriptions listed, but nothing is fetched until you tap Update on one — a
+        blocklist nobody asked for should never appear out of a silent fetch.</p>
+        <p>Once you have downloaded a list, keeping it fresh is maintenance of a choice you
+        already made, so the app does that part for you.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What is the abuse.ch key for? Do I need one?</summary>
+      <div class="answer">
+        <p>You do not need one. It is optional and the app is fully functional without it.</p>
+        <p>A free abuse.ch Auth-Key lets you pull ThreatFox and URLhaus straight from
+        abuse.ch as a "JSON manifest" blocklist, which updates sooner than our mirror. If you
+        want that, you paste the key into Settings &rarr; Threat intelligence. The key is
+        stored in the Keychain and only ever sent to abuse.ch — the app checks the host of a
+        subscription before it will attach the key, so it cannot leak to a third-party list
+        URL. It is never included in a diagnostic report and never syncs to iCloud.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2>Running it day to day</h2>
+
+  <div class="faq">
+
+    <details>
+      <summary>Does it drain my battery?</summary>
+      <div class="answer">
+        <p>Honest answer: it costs what an always-on local tunnel costs, and we are not going
+        to pretend that is nothing.</p>
+        <p>Every packet your device sends or receives passes through an extension running on
+        the phone, which is real work that would not otherwise happen. Against that, FluxMoat
+        does no continuous networking of its own — no telemetry, no polling, no uploads — and
+        list refreshes are throttled to a few hours at most and skipped entirely on Low Data
+        Mode. The heavy matching runs against in-memory structures built once when rules
+        change, not per packet from disk.</p>
+        <p>We would rather publish a measured figure than an adjective, and we do not have one
+        we would stand behind yet. iOS Settings &rarr; Battery will show you FluxMoat's actual
+        share on your device and your usage, which is the number that matters anyway.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What happens if the tunnel crashes?</summary>
+      <div class="answer">
+        <p>It fails open. If the extension stops or rules fail to load, connectivity is
+        restored rather than blocked, and you are told about it. A privacy tool that silently
+        takes your phone offline is a worse outcome than one that stops filtering, so that is
+        the trade it makes.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I clear everything?</summary>
+      <div class="answer">
+        <p>There are two separate one-tap actions, kept separate on purpose so neither one
+        surprises you:</p>
+        <ul>
+          <li><strong>Settings &rarr; Data</strong> clears traffic history. You can also pick
+          how long history is kept at all — 7 days, 30 days, 90 days, 6 months or 12 months,
+          with 30 days the default. Choosing a shorter period deletes the excess immediately.
+          Export produces a CSV containing the same fields shown in Live Traffic.</li>
+          <li><strong>Settings &rarr; Reset</strong> erases configuration: the rules, lists
+          and preferences you have set up on this device. Traffic history is kept — that has
+          its own button under Data.</li>
+        </ul>
+        <p>Before either runs, the app shows an itemised list of exactly what will be cleared
+        and what will be kept. Deleting the app removes all of it regardless.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I report a problem?</summary>
+      <div class="answer">
+        <p>Settings &rarr; <strong>Report a problem</strong> builds a short summary of your
+        install — your settings and how many rules and lists you have. It shows you the whole
+        thing before you share it, and it contains no browsing history, domains or network
+        names. The report says so on its own first line: <em>Settings and counts only. No
+        logs, domains, IP addresses, network names or keys are included.</em></p>
+        <p>Nothing is sent automatically. The flow ends at the iOS share sheet, so where it
+        goes is your choice. Send it to
+        <a href="mailto:connect@hominexis.com">connect@hominexis.com</a>, along with what you
+        expected to happen and what happened instead.</p>
+        <p>You are equally welcome to just email us without a report attached.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2>Still stuck?</h2>
+  <p>Write to <a href="mailto:connect@hominexis.com">connect@hominexis.com</a>. If your
+  question is about what the app does with data, the <a href="privacy.html">privacy
+  policy</a> is more specific than most and may answer it faster.</p>
+
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap-wide">
+    <div class="cols">
+      <div>
+        <p class="fine"><strong>FluxMoat</strong></p>
+        <p class="fine">On-device network privacy monitor &amp; firewall for iPhone.</p>
+      </div>
+      <div class="links">
+        <a href="index.html">Overview</a>
+        <a href="help.html">Help</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:connect@hominexis.com">connect@hominexis.com</a>
+      </div>
+    </div>
+    <p class="fine">Coming soon to the App Store.</p>
+    <p class="fine no-track">This site sets no cookies and loads no trackers.</p>
+    <p class="fine">&copy; 2026 Hominexis</p>
+  </div>
+</footer>
+
+</body>
+</html>
