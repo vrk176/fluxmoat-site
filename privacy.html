@@ -134,8 +134,8 @@
         <td>Only if you have chosen to paste a free abuse.ch Auth-Key into Settings and
         subscribed to a feed hosted there. Optional; the app works fully without it.</td>
         <td>The key, as an <code>Auth-Key</code> header. The key is stored in the Keychain
-        and only ever sent to abuse.ch — the app attaches it only when the host is
-        <code>abuse.ch</code> or a subdomain of it.</td>
+        and only ever sent to abuse.ch. The app checks a subscription's host before it will
+        attach the key, so it cannot reach a third-party list URL.</td>
       </tr>
       <tr>
         <td>The DNS-over-HTTPS resolver you pick</td>
