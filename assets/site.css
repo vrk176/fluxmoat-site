@@ -706,6 +706,11 @@ h3 {
   background: var(--card);
   -webkit-overflow-scrolling: touch;
 }
+/* the endpoint table is the one thing on these pages that wants more than the
+   reading measure, so let it lean into the empty margin on wide screens */
+@media (min-width: 62rem) { .doc-body .table-scroll { margin-right: -2rem; } }
+@media (min-width: 70rem) { .doc-body .table-scroll { margin-right: -8rem; } }
+
 table { border-collapse: collapse; width: 100%; font-size: 0.92rem; min-width: 36rem; }
 th, td {
   text-align: left;
