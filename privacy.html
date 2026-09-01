@@ -111,7 +111,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><code>feeds.hominexis.com</code><br>ThreatFox mirror (ours)</td>
+        <td><code>feeds.hominexis.com</code><br>ThreatFox mirror (ours, on GitHub Pages)</td>
         <td>The subscription is present after install, but nothing downloads until you tap
         Update. After your first download, the app re-checks it at most once every six
         hours while it is in the foreground.</td>
@@ -167,10 +167,32 @@
   licence check, no update check, no crash upload, no push registration.</p>
 
   <p>A note on the first row, because we would rather say it than have you find it: the
-  ThreatFox mirror is hosted by us. It serves a static file over HTTPS. It has no account
-  system and receives nothing about you beyond what any web server necessarily sees when
-  a file is requested — an IP address, a timestamp, and the name of the file. We do not
-  join those records to anything, because there is nothing to join them to.</p>
+  ThreatFox mirror is ours, but the server is not. <code>feeds.hominexis.com</code> is our
+  domain pointed at GitHub Pages, and GitHub serves the list as a static file over HTTPS.
+  So when your phone fetches that list, the request arrives at GitHub's servers, and GitHub
+  receives what any web server necessarily sees — an IP address, a timestamp, a user agent,
+  and the name of the file requested. That is covered by
+  <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's
+  privacy statement</a> rather than by this one.</p>
+
+  <p>There is no account and no key anywhere on that path. We run no server of our own here
+  and hold no logs, so there is nothing on our side to inspect, to join to anything, or to
+  hand over — we could not produce a record of your downloads if we were asked for one.</p>
+
+  <h2 id="dns">The 1.1.1.1 you will see</h2>
+
+  <p>While the tunnel is on, iOS reports <code>1.1.1.1</code> as its DNS server — in
+  Settings, and on any DNS-leak test site you might point at it. We would rather explain
+  that than let it look like something it is not. That address is where the system is told
+  to send DNS so that the tunnel can intercept it in the first place. The hostname lookups
+  your browsing depends on are answered on the device, by FluxMoat, and are not forwarded
+  to <code>1.1.1.1</code>.</p>
+
+  <p>One claim we will not make is that no DNS ever leaves your phone. FluxMoat answers the
+  address lookups; other kinds of DNS query ride the tunnel as ordinary traffic, to
+  whichever resolver the app that asked them is using. And if you switch DNS-over-HTTPS on
+  and choose a resolver, your lookups go to that resolver by design — as the table above
+  says.</p>
 
   <h2 id="blocklists">Blocklists and threat intelligence</h2>
 
@@ -272,7 +294,15 @@
   <p>FluxMoat contains no analytics SDK, no advertising SDK, no crash-reporting SDK, and
   no attribution or A/B-testing SDK. The app's only third-party component is the
   open-source <a href="https://github.com/eycorsican/leaf">leaf</a> tunnel engine, which
-  is compiled into the app when we build it and makes no network calls of its own.</p>
+  is compiled into the app when we build it.</p>
+
+  <p>Because that engine sits closest to your lookups, it is worth being exact about what
+  it does with them. It routes every connection to FluxMoat's own on-device proxy at
+  <code>127.0.0.1</code>. That is a literal IP address rather than a name, so the engine
+  performs no name resolution of its own: it does not send DNS queries to the public
+  resolvers named in its configuration, nor to any other third-party resolver. The
+  plaintext lookups that apps inside the tunnel make are answered on the device, with
+  placeholder addresses from a reserved, non-routable range.</p>
 
   <p>There are no cookies, no web views used for tracking, and no third party that
   receives a copy of anything.</p>
