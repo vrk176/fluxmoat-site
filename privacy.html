@@ -111,7 +111,8 @@
         <p>This page also lists <a href="#endpoints">every server the app can contact</a>, and
         what makes it happen. That list is short and it is complete. The app asks for exactly
         one system permission beyond the VPN itself — <a href="#location">approximate location</a>,
-        only when you open the world map, only to draw the near end of the lines on it.</p>
+        only when you open the world map, to draw the near end of the lines on it, and,
+        if you opt in, to mark your country on an Insights share card.</p>
       </div>
 
       <h2 id="collect">What we collect</h2>
@@ -328,10 +329,20 @@
       lines, the map asks for when-in-use location access, at iOS's <em>reduced</em> (city-level)
       accuracy — the prompt appears only when you first open Insights &rarr; Map, not at launch.</p>
 
+      <p>The Insights share sheet never requests location on its own. Its <strong>Show my
+      country</strong> toggle, on the Countries card, only ever reduces a fix the map has
+      already obtained to the nearest country — only that country code reaches the card, never
+      the coordinate — and draws a white dot with arcs to your top five countries. It is off by
+      default and only appears once the map has a fix to read; decline on the map, and there is
+      nothing for the toggle to show.</p>
+
       <p>As the permission prompt itself says: <em>Your approximate location is used only to draw
-      connection lines on the world map. It never leaves this device.</em> The coordinate is held
-      in memory while the map is on screen. It is never written to disk, never logged, never
-      attached to a connection record, and never transmitted.</p>
+      connection lines on the world map. It never leaves this device.</em> That covers the map;
+      the share-card marker described above reads the same fix rather than requesting a new
+      one. The coordinate is held in memory for as long as the app process is running — not only
+      while the map is on screen, since the share sheet needs to read the last fix after you've
+      left the map — and it is never written to disk, never logged, never attached to a
+      connection record, and never transmitted.</p>
 
       <p>Declining is a first-class option. If you say no, the map simply draws no origin lines
       and everything else keeps working. You are not asked again and nothing nags you.</p>
